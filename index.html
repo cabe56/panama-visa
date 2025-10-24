@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panama Visa Requirement Check</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Panama Visa Requirement Check</h1>
+        
+        <div class="intro">
+            <p>This tool helps determine if you need a visa to enter Panama based on your nationality, existing visas, and length of stay.</p>
+            <p>Special conditions apply to nationals of Haiti and Cuba for transit visas.</p>
+        </div>
+        
+        <form id="visaForm">
+            <!-- Question 1: Nationality -->
+            <div class="form-group">
+                <div class="question-title">1. What is your nationality?</div>
+                <label for="nationality">Select your country <span class="required">*</span></label>
+                <select id="nationality" required>
+                    <option value="">-- Select your country --</option>
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+            </div>
+            
+            <!-- Notice for visa-exempt countries -->
+            <div id="exemptNotice" class="exempt-notice">
+                <h4>Visa Not Required</h4>
+                <p>Based on your nationality, you do not require a visa to enter Panama for tourism purposes.</p>
+            </div>
+            
+            <!-- Question 2: Visa from privileged countries -->
+            <div id="question2" class="form-group hidden">
+                <div class="question-title">2. Do you have a valid visa for Canada, USA, Australia, South Korea, Japan, UK, Singapore, or any EU country?</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <div class="option-button" data-value="yes">Yes</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-button" data-value="no">No</div>
+                    </div>
+                </div>
+                <div class="visa-countries">Holders of valid visas from these countries can stay in Panama for up to 30 days without a separate visa.</div>
+                <input type="hidden" id="has_privileged_visa">
+            </div>
+            
+            <!-- Question 3: Duration of stay -->
+            <div id="question3" class="form-group hidden">
+                <div class="question-title">3. How long will you stay in Panama?</div>
+                <div class="options-group">
+                    <div class="option-item">
+                        <div class="option-button" data-value="short">12 hours or less (Transit)</div>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-button" data-value="long">More than 12 hours</div>
+                    </div>
+                </div>
+                <input type="hidden" id="stay_duration">
+            </div>
+            
+            <button type="submit" id="submitBtn" class="submit-btn">Check Visa Requirements</button>
+        </form>
+        
+        <div id="result" class="result"></div>
+        
+        <div class="footer">
+            <p>For official and most up-to-date information, please visit the <a href="http://panamaconsulatehk.com/visas/" target="_blank">Panama Consulate website</a>.</p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
