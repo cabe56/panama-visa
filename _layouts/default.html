@@ -8,7 +8,15 @@
 </head>
 <body>
     <div class="container">
+        {% if page.title != "Panama Visa Requirement Check" %}
+        <a href="{{ '/' | relative_url }}" class="back-button">← Back to Visa Check Tool</a>
+        {% endif %}
+        
         {{ content }}
+        
+        <div class="footer">
+            <p>For official and most up-to-date information, please visit the <a href="http://panamaconsulatehk.com/visas/" target="_blank">Panama Consulate website</a>.</p>
+        </div>
     </div>
 </body>
 </html>
