@@ -22,50 +22,59 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.content {
+    min-height: 400px;
+}
+
+/* Back Button */
+.back-button {
+    display: inline-block;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    background-color: #005baa;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.back-button:hover {
+    background-color: #004a8c;
+    text-decoration: none;
+    color: white;
+}
+
+/* Headings */
 h1 {
     color: #005baa;
     text-align: center;
     margin-bottom: 30px;
     border-bottom: 2px solid #eaeaea;
     padding-bottom: 15px;
+    font-size: 28px;
 }
 
 h2 {
     color: #005baa;
-    margin: 25px 0 15px 0;
+    margin: 30px 0 15px 0;
     border-bottom: 1px solid #eaeaea;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
+    font-size: 22px;
 }
 
 h3 {
     color: #005baa;
-    margin: 20px 0 10px 0;
+    margin: 25px 0 12px 0;
+    font-size: 18px;
 }
 
 h4 {
     color: #005baa;
-    margin: 15px 0 8px 0;
-}
-
-/* Back Button */
-.back-button {
-    display: inline-block;
-    margin-bottom: 20px;
-    padding: 10px 15px;
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-    color: #005baa;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.back-button:hover {
-    background-color: #e9ecef;
-    border-color: #005baa;
-    text-decoration: none;
-    color: #004a8c;
+    margin: 20px 0 10px 0;
+    font-size: 16px;
 }
 
 /* Intro Section */
@@ -309,7 +318,7 @@ button:hover {
 
 /* Footer */
 .footer {
-    margin-top: 30px;
+    margin-top: 40px;
     text-align: center;
     font-size: 14px;
     color: #666;
@@ -356,21 +365,23 @@ button:hover {
 }
 
 /* Markdown Content Styles */
-.markdown-content ul, 
-.markdown-content ol {
+.content ul, 
+.content ol {
     margin: 15px 0;
     padding-left: 30px;
 }
 
-.markdown-content li {
-    margin-bottom: 8px;
+.content li {
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
-.markdown-content p {
-    margin-bottom: 15px;
+.content p {
+    margin-bottom: 16px;
+    line-height: 1.6;
 }
 
-.markdown-content strong {
+.content strong {
     color: #005baa;
     font-weight: 600;
 }
@@ -381,7 +392,8 @@ button:hover {
     border: 1px solid #ffeaa7;
     border-radius: 5px;
     padding: 15px;
-    margin: 15px 0;
+    margin: 20px 0;
+    border-left: 4px solid #ffc107;
 }
 
 .notice strong {
@@ -394,6 +406,7 @@ button:hover {
     border-radius: 5px;
     padding: 20px;
     margin: 20px 0;
+    border-left: 4px solid #005baa;
 }
 
 .document-list h4 {
@@ -409,12 +422,29 @@ button:hover {
 }
 
 .document-list li {
-    padding: 8px 0;
+    padding: 10px 0;
     border-bottom: 1px solid #e9ecef;
+    position: relative;
+    padding-left: 20px;
+}
+
+.document-list li:before {
+    content: "•";
+    color: #005baa;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
 }
 
 .document-list li:last-child {
     border-bottom: none;
+}
+
+/* Underline for important sections */
+.content hr {
+    margin: 30px 0;
+    border: none;
+    border-top: 2px solid #eaeaea;
 }
 
 /* Responsive Design */
@@ -424,7 +454,7 @@ button:hover {
     }
     
     .container {
-        padding: 20px;
+        padding: 20px 15px;
     }
     
     .options-group {
@@ -443,8 +473,17 @@ button:hover {
         font-size: 20px;
     }
     
+    h3 {
+        font-size: 18px;
+    }
+    
     .form-group {
         padding: 10px;
+    }
+    
+    .content ul,
+    .content ol {
+        padding-left: 20px;
     }
 }
 
